@@ -39,6 +39,7 @@
   width: 37px;
   height: 21px;
   padding: 0;
+  border: solid 1px black;
   border-radius: 3px;
   background: #1C1D1D;
   -webkit-transition: all 0.2s ease;
