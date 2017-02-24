@@ -6,10 +6,10 @@ import { shallow } from 'enzyme'
 
 const noop = () => {}
 const classNames = {
-  base: 'react-toggle',
-  focus: 'react-toggle--focus',
-  checked: 'react-toggle--checked',
-  disabled: 'react-toggle--disabled',
+  base: 'treactr-toggle',
+  focus: 'treactr-toggle--focus',
+  checked: 'treactr-toggle--checked',
+  disabled: 'treactr-toggle--disabled',
 }
 
 chai.use(chaiEnzyme())
@@ -61,13 +61,13 @@ describe('Component', () => {
   it('will hide icons if set false', () => {
     wrapper = shallow(<Toggle icons={false} />)
 
-    expect(wrapper.find('.react-toggle-track-check')).to.be.empty
-    expect(wrapper.find('.react-toggle-track-x')).to.be.empty
+    expect(wrapper.find('.treactr-toggle-track-check')).to.be.empty
+    expect(wrapper.find('.treactr-toggle-track-x')).to.be.empty
 
     wrapper = shallow(<Toggle />)
 
-    expect(wrapper.find('.react-toggle-track-check')).to.not.be.empty
-    expect(wrapper.find('.react-toggle-track-x')).to.not.be.empty
+    expect(wrapper.find('.treactr-toggle-track-check')).to.not.be.empty
+    expect(wrapper.find('.treactr-toggle-track-x')).to.not.be.empty
   })
 
   it('takes custom icons', () => {
@@ -75,8 +75,8 @@ describe('Component', () => {
     const unchecked = <div>unchecked</div>
     wrapper = shallow(<Toggle icons={{ checked, unchecked }} />)
 
-    expect(wrapper.find('.react-toggle-track-check')).to.be.contain(checked)
-    expect(wrapper.find('.react-toggle-track-x')).to.be.contain(unchecked)
+    expect(wrapper.find('.treactr-toggle-track-check')).to.be.contain(checked)
+    expect(wrapper.find('.treactr-toggle-track-x')).to.be.contain(unchecked)
   })
 
   it('defaults to the regular icon if only one is supplied', () => {
@@ -85,14 +85,14 @@ describe('Component', () => {
     const { icons: defaults } = Toggle.defaultProps
     wrapper = shallow(<Toggle icons={{ checked }} />)
 
-    expect(wrapper.find('.react-toggle-track-check')).to.be.contain(checked)
-    expect(wrapper.find('.react-toggle-track-x')).to.be.contain(defaults.unchecked)
+    expect(wrapper.find('.treactr-toggle-track-check')).to.be.contain(checked)
+    expect(wrapper.find('.treactr-toggle-track-x')).to.be.contain(defaults.unchecked)
     expect(defaults.unchecked).to.exist
 
     wrapper = shallow(<Toggle icons={{ unchecked }} />)
 
-    expect(wrapper.find('.react-toggle-track-check')).to.be.contain(defaults.checked)
-    expect(wrapper.find('.react-toggle-track-x')).to.be.contain(unchecked)
+    expect(wrapper.find('.treactr-toggle-track-check')).to.be.contain(defaults.checked)
+    expect(wrapper.find('.treactr-toggle-track-x')).to.be.contain(unchecked)
     expect(defaults.checked).to.exist
   })
 
@@ -100,13 +100,13 @@ describe('Component', () => {
     const element = <div>random</div>
     wrapper = shallow(<Toggle icons={{ checked: element, unchecked: null }} />)
 
-    expect(wrapper.find('.react-toggle-track-check')).to.be.contain(element)
-    expect(wrapper.find('.react-toggle-track-x')).to.be.empty
+    expect(wrapper.find('.treactr-toggle-track-check')).to.be.contain(element)
+    expect(wrapper.find('.treactr-toggle-track-x')).to.be.empty
 
     wrapper = shallow(<Toggle icons={{ checked: null, unchecked: element }} />)
 
-    expect(wrapper.find('.react-toggle-track-check')).to.be.empty
-    expect(wrapper.find('.react-toggle-track-x')).to.be.contain(element)
+    expect(wrapper.find('.treactr-toggle-track-check')).to.be.empty
+    expect(wrapper.find('.treactr-toggle-track-x')).to.be.contain(element)
   })
 
   it('uses correct classNames based on state', () => {

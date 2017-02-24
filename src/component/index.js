@@ -1,7 +1,7 @@
 import React, { PureComponent, PropTypes } from 'react'
 import classNames from 'classnames'
-import Check from './check'
-import X from './x'
+import ON from './on'
+import OFF from './off'
 import { pointerCoord } from './util'
 
 export default class Toggle extends PureComponent {
@@ -101,10 +101,10 @@ export default class Toggle extends PureComponent {
 
   render () {
     const { className, icons: _icons, ...inputProps } = this.props
-    const classes = classNames('react-toggle', {
-      'react-toggle--checked': this.state.checked,
-      'react-toggle--focus': this.state.hasFocus,
-      'react-toggle--disabled': this.props.disabled,
+    const classes = classNames('treactr-toggle', {
+      'treactr-toggle--checked': this.state.checked,
+      'treactr-toggle--focus': this.state.hasFocus,
+      'treactr-toggle--disabled': this.props.disabled,
     }, className)
 
     return (
@@ -113,22 +113,22 @@ export default class Toggle extends PureComponent {
         onTouchStart={this.handleTouchStart}
         onTouchMove={this.handleTouchMove}
         onTouchEnd={this.handleTouchEnd}>
-        <div className='react-toggle-track'>
-          <div className='react-toggle-track-check'>
+        <div className='treactr-toggle-track'>
+          <div className='treactr-toggle-track-check'>
             {this.getIcon('checked')}
           </div>
-          <div className='react-toggle-track-x'>
+          <div className='treactr-toggle-track-x'>
             {this.getIcon('unchecked')}
           </div>
         </div>
-        <div className='react-toggle-thumb' />
+        <div className='treactr-toggle-thumb' />
 
         <input
           {...inputProps}
           ref={ref => { this.input = ref }}
           onFocus={this.handleFocus}
           onBlur={this.handleBlur}
-          className='react-toggle-screenreader-only'
+          className='treactr-toggle-screenreader-only'
           type='checkbox' />
       </div>
     )
@@ -139,8 +139,8 @@ Toggle.displayName = 'Toggle'
 
 Toggle.defaultProps = {
   icons: {
-    checked: <Check />,
-    unchecked: <X />,
+    checked: <ON />,
+    unchecked: <OFF />,
   },
 }
 

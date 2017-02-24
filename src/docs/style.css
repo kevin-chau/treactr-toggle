@@ -1,6 +1,6 @@
 /* These are example-specific */
 
-.react-toggle {
+.treactr-toggle {
   margin-right: 8px;
   vertical-align: middle;
 }
@@ -21,6 +21,6 @@ pre {
   margin-top: 8px;
 }
 
-.custom-classname.react-toggle--checked .react-toggle-track {
+.custom-classname.treactr-toggle--checked .treactr-toggle-track {
   background-color: #ab199f;
 }

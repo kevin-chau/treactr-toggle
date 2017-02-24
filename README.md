@@ -23,7 +23,7 @@ The component takes the following props.
 ## Installation
 
 ```bash
-npm install react-toggle
+npm install treactr-toggle
 ```
 
 Include the component's [CSS](./style.css).

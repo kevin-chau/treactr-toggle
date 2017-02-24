@@ -3,7 +3,7 @@ import { render } from 'react-dom'
 
 import Toggle from '../component'
 // In your code this would be:
-// import Toggle from 'react-toggle'
+// import Toggle from 'treactr-toggle'
 
 import '../../style.css'
 import './style.css'
@@ -60,19 +60,19 @@ class App extends Component {
   render () {
     return (
       <form ref='breakfastForm'>
-        <h1>react-toggle</h1>
+        <h1>treactr-toggle</h1>
 
         {/* Installation */}
 
         <div className='example'>
           <div>Installation</div>
           <pre>
-            {`npm install react-toggle --save`}
+            {`npm install treactr-toggle --save`}
           </pre>
-          <pre>{`import Toggle from 'react-toggle'`}</pre>
+          <pre>{`import Toggle from 'treactr-toggle'`}</pre>
           <p>Or if you're not using the ES6 module format yet:</p>
-          <pre>{`var Toggle = require('react-toggle')`}</pre>
-          <p>Include the component's <a href='https://raw.githubusercontent.com/instructure-react/react-toggle/master/style.css'>CSS</a>.</p>
+          <pre>{`var Toggle = require('treactr-toggle')`}</pre>
+          <p>Include the component's <a href='https://raw.githubusercontent.com/kevinchau321/treactr-toggle/master/style.css'>CSS</a>.</p>
         </div>
 
         {/* Bacon */}
@@ -307,7 +307,7 @@ class App extends Component {
 </label>`}
           </pre>
           <pre>
-            {`.custom-classname.react-toggle--checked .react-toggle-track {
+            {`.custom-classname.treactr-toggle--checked .treactr-toggle-track {
   background-color: #ab199f;
 }`}
           </pre>
