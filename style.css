@@ -175,8 +175,8 @@
 }
 
 .treactr-kill-track {
-  width: 11px;
-  height: 11px;
+  width: 9px;
+  height: 9px;
   padding: 0;
   border: solid 1px black;
   border-radius: 50%;
@@ -200,14 +200,13 @@
 
 .treactr-kill-track-check {
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
   top: 0px;
   bottom: 0px;
   margin-top: auto;
   margin-bottom: auto;
   line-height: 0;
-  right: 17px;
   opacity: 0;
   -webkit-transition: opacity 0.25s ease;
   -moz-transition: opacity 0.25s ease;
@@ -223,14 +222,13 @@
 
 .treactr-kill-track-x {
   position: absolute;
-  width: 10px;
-  height: 10px;
+  width: 9px;
+  height: 9px;
   top: 0px;
   bottom: 0px;
   margin-top: auto;
   margin-bottom: auto;
   line-height: 0;
-  right: 17px;
   opacity: 1;
   -webkit-transition: opacity 0.25s ease;
   -moz-transition: opacity 0.25s ease;
