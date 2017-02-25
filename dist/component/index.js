@@ -260,7 +260,6 @@ var Kill = function (_Toggle) {
           _react2.default.createElement('div', { className: 'treactr-kill-track-check' }),
           _react2.default.createElement('div', { className: 'treactr-kill-track-x' })
         ),
-        _react2.default.createElement('div', { className: 'treactr-kill-thumb' }),
         _react2.default.createElement('input', _extends({}, inputProps, {
           ref: function ref(_ref2) {
             _this4.input = _ref2;

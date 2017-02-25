@@ -183,7 +183,6 @@ class Kill extends Toggle {
           <div className='treactr-kill-track-check' />
           <div className='treactr-kill-track-x' />
         </div>
-        <div className='treactr-kill-thumb' />
 
         <input
           {...inputProps}
