@@ -4,7 +4,7 @@ import ON from './on'
 import OFF from './off'
 import { pointerCoord } from './util'
 
-export default class Toggle extends PureComponent {
+class Toggle extends PureComponent {
   constructor (props) {
     super(props)
     this.handleClick = this.handleClick.bind(this)
@@ -163,3 +163,42 @@ Toggle.propTypes = {
     }),
   ]),
 }
+
+class Kill extends Toggle {
+  render () {
+    const { className, icons: _icons, ...inputProps } = this.props
+    const classes = classNames('treactr-kill', {
+      'treactr-kill--checked': this.state.checked,
+      'treactr-kill--focus': this.state.hasFocus,
+      'treactr-kill--disabled': this.props.disabled,
+    }, className)
+
+    return (
+      <div className={classes}
+        onClick={this.handleClick}
+        onTouchStart={this.handleTouchStart}
+        onTouchMove={this.handleTouchMove}
+        onTouchEnd={this.handleTouchEnd}>
+        <div className='treactr-kill-track'>
+          <div className='treactr-kill-track-check'>
+            {this.getIcon('checked')}
+          </div>
+          <div className='treactr-kill-track-x'>
+            {this.getIcon('unchecked')}
+          </div>
+        </div>
+        <div className='treactr-kill-thumb' />
+
+        <input
+          {...inputProps}
+          ref={ref => { this.input = ref }}
+          onFocus={this.handleFocus}
+          onBlur={this.handleBlur}
+          className='treactr-kill-screenreader-only'
+          type='checkbox' />
+      </div>
+    )
+  }
+}
+
+export { Toggle, Kill }

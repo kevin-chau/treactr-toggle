@@ -1,7 +1,7 @@
 import React from 'react'
 import chai, { expect } from 'chai'
 import chaiEnzyme from 'chai-enzyme'
-import Toggle from '../src/component'
+import { Toggle } from '../src/component'
 import { shallow } from 'enzyme'
 
 const noop = () => {}

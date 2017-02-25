@@ -56,8 +56,6 @@
 	
 	var _component = __webpack_require__(178);
 	
-	var _component2 = _interopRequireDefault(_component);
-	
 	__webpack_require__(183);
 	
 	__webpack_require__(187);
@@ -190,7 +188,7 @@
 	          _react2.default.createElement(
 	            'label',
 	            null,
-	            _react2.default.createElement(_component2.default, {
+	            _react2.default.createElement(_component.Toggle, {
 	              defaultChecked: this.state.baconIsReady,
 	              onChange: this.handleBaconChange }),
 	            _react2.default.createElement(
@@ -214,7 +212,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'example' },
-	          _react2.default.createElement(_component2.default, {
+	          _react2.default.createElement(_component.Toggle, {
 	            id: 'cheese-status',
 	            defaultChecked: this.state.cheeseIsReady,
 	            onChange: this.handleCheeseChange }),
@@ -238,7 +236,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'example' },
-	          _react2.default.createElement(_component2.default, {
+	          _react2.default.createElement(_component.Toggle, {
 	            id: 'biscuit-status',
 	            defaultChecked: this.state.biscuitIsReady,
 	            'aria-labelledby': 'biscuit-label',
@@ -263,7 +261,7 @@
 	        _react2.default.createElement(
 	          'div',
 	          { className: 'example' },
-	          _react2.default.createElement(_component2.default, {
+	          _react2.default.createElement(_component.Toggle, {
 	            defaultChecked: this.state.eggsAreReady,
 	            'aria-label': 'No label',
 	            onChange: this.handleEggsChange }),
@@ -304,7 +302,7 @@
 	          _react2.default.createElement(
 	            'label',
 	            null,
-	            _react2.default.createElement(_component2.default, {
+	            _react2.default.createElement(_component.Toggle, {
 	              defaultChecked: !!this.state.milkIsReady,
 	              name: 'milkIsReady',
 	              value: 'yes',
@@ -349,7 +347,7 @@
 	            null,
 	            '<Toggle\n  checked={this.state.burritoIsReady}\n  name=\'burritoIsReady\'\n  value=\'yes\'\n  onChange={this.handleBurritoChange}/>'
 	          ),
-	          _react2.default.createElement(_component2.default, {
+	          _react2.default.createElement(_component.Toggle, {
 	            checked: this.state.burritoIsReady,
 	            name: 'burritoIsReady',
 	            value: 'yes',
@@ -377,7 +375,7 @@
 	            null,
 	            '<Toggle\n  checked={this.state.toastIsReady}\n  name=\'toastIsReady\'\n  value=\'yes\' />'
 	          ),
-	          _react2.default.createElement(_component2.default, {
+	          _react2.default.createElement(_component.Toggle, {
 	            checked: this.state.toastIsReady,
 	            name: 'toastIsReady',
 	            value: 'yes' })
@@ -391,7 +389,7 @@
 	            _react2.default.createElement(
 	              'label',
 	              null,
-	              _react2.default.createElement(_component2.default, {
+	              _react2.default.createElement(_component.Toggle, {
 	                defaultChecked: false,
 	                disabled: true }),
 	              _react2.default.createElement(
@@ -407,7 +405,7 @@
 	            _react2.default.createElement(
 	              'label',
 	              null,
-	              _react2.default.createElement(_component2.default, {
+	              _react2.default.createElement(_component.Toggle, {
 	                defaultChecked: true,
 	                disabled: true }),
 	              _react2.default.createElement(
@@ -429,7 +427,7 @@
 	          _react2.default.createElement(
 	            'label',
 	            null,
-	            _react2.default.createElement(_component2.default, {
+	            _react2.default.createElement(_component.Toggle, {
 	              defaultChecked: this.state.aubergineIsReady,
 	              className: 'custom-classname',
 	              onChange: this.handleAubergineChange }),
@@ -456,7 +454,7 @@
 	          _react2.default.createElement(
 	            'label',
 	            null,
-	            _react2.default.createElement(_component2.default, {
+	            _react2.default.createElement(_component.Toggle, {
 	              defaultChecked: this.state.soupIsReady,
 	              icons: {
 	                checked: _react2.default.createElement(Heart, null),
@@ -481,7 +479,7 @@
 	          _react2.default.createElement(
 	            'label',
 	            null,
-	            _react2.default.createElement(_component2.default, {
+	            _react2.default.createElement(_component.Toggle, {
 	              defaultChecked: this.state.tofuIsReady,
 	              icons: false,
 	              onChange: this.handleTofuChange }),
@@ -495,6 +493,28 @@
 	            'pre',
 	            null,
 	            '<label>\n  <Toggle\n    defaultChecked={this.state.tofuIsReady}\n    icons={false}\n    onChange={this.handleTofuChange} />\n  <span>No icons</span>\n</label>'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'example' },
+	          _react2.default.createElement(
+	            'label',
+	            null,
+	            _react2.default.createElement(_component.Kill, {
+	              defaultChecked: this.state.tofuIsReady,
+	              icons: false,
+	              onChange: this.handleTofuChange }),
+	            _react2.default.createElement(
+	              'span',
+	              { className: 'label-text' },
+	              'Kill'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'pre',
+	            null,
+	            '<label>\n  <Toggle\n    defaultChecked={this.state.tofuIsReady}\n    icons={false}\n    onChange={this.handleTofuChange} />\n  <span>Kill</span>\n</label>'
 	          )
 	        )
 	      );
@@ -21951,6 +21971,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
+	exports.Kill = exports.Toggle = undefined;
 	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
@@ -22143,9 +22164,6 @@
 	  return Toggle;
 	}(_react.PureComponent);
 	
-	exports.default = Toggle;
-	
-	
 	Toggle.displayName = 'Toggle';
 	
 	Toggle.defaultProps = {
@@ -22171,6 +22189,71 @@
 	    unchecked: _react.PropTypes.node
 	  })])
 	};
+	
+	var Kill = function (_Toggle) {
+	  _inherits(Kill, _Toggle);
+	
+	  function Kill() {
+	    _classCallCheck(this, Kill);
+	
+	    return _possibleConstructorReturn(this, (Kill.__proto__ || Object.getPrototypeOf(Kill)).apply(this, arguments));
+	  }
+	
+	  _createClass(Kill, [{
+	    key: 'render',
+	    value: function render() {
+	      var _this4 = this;
+	
+	      var _props2 = this.props,
+	          className = _props2.className,
+	          _icons = _props2.icons,
+	          inputProps = _objectWithoutProperties(_props2, ['className', 'icons']);
+	
+	      var classes = (0, _classnames2.default)('treactr-kill', {
+	        'treactr-kill--checked': this.state.checked,
+	        'treactr-kill--focus': this.state.hasFocus,
+	        'treactr-kill--disabled': this.props.disabled
+	      }, className);
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { className: classes,
+	          onClick: this.handleClick,
+	          onTouchStart: this.handleTouchStart,
+	          onTouchMove: this.handleTouchMove,
+	          onTouchEnd: this.handleTouchEnd },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'treactr-kill-track' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'treactr-kill-track-check' },
+	            this.getIcon('checked')
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'treactr-kill-track-x' },
+	            this.getIcon('unchecked')
+	          )
+	        ),
+	        _react2.default.createElement('div', { className: 'treactr-kill-thumb' }),
+	        _react2.default.createElement('input', _extends({}, inputProps, {
+	          ref: function ref(_ref2) {
+	            _this4.input = _ref2;
+	          },
+	          onFocus: this.handleFocus,
+	          onBlur: this.handleBlur,
+	          className: 'treactr-kill-screenreader-only',
+	          type: 'checkbox' }))
+	      );
+	    }
+	  }]);
+	
+	  return Kill;
+	}(Toggle);
+	
+	exports.Toggle = Toggle;
+	exports.Kill = Kill;
 
 /***/ },
 /* 179 */
@@ -22348,7 +22431,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".treactr-toggle {\n  display: inline-block;\n  position: relative;\n  cursor: pointer;\n  background-color: transparent;\n  border: 0;\n  padding: 0;\n\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n\n  /*-webkit-tap-highlight-color: rgba(0,0,0,0);\n  -webkit-tap-highlight-color: transparent;*/\n}\n\n.treactr-toggle-screenreader-only {\n  border: 0;\n  clip: rect(0 0 0 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}\n\n.treactr-toggle--disabled {\n  cursor: not-allowed;\n  opacity: 0.5;\n  -webkit-transition: opacity 0.25s;\n  transition: opacity 0.25s;\n}\n\n.treactr-toggle-track {\n  width: 37px;\n  height: 21px;\n  padding: 0;\n  border-radius: 3px;\n  background: #1C1D1D;\n  -webkit-transition: all 0.2s ease;\n  -moz-transition: all 0.2s ease;\n  transition: all 0.2s ease;\n}\n\n.treactr-toggle:hover:not(.treactr-toggle--disabled) .treactr-toggle-track {\n  background-color: #363737;\n}\n\n.treactr-toggle--checked .treactr-toggle-track {\n  background-color: #FFA606;\n}\n\n.treactr-toggle--checked:hover:not(.treactr-toggle--disabled) .treactr-toggle-track {\n  background-color: #FFC020;\n}\n\n.treactr-toggle-track-check {\n  position: absolute;\n  width: 10px;\n  height: 10px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  right: 17px;\n  opacity: 0;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-toggle--checked .treactr-toggle-track-check {\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-toggle-track-x {\n  position: absolute;\n  width: 10px;\n  height: 10px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  right: 17px;\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-toggle--checked .treactr-toggle-track-x {\n  opacity: 0;\n}\n\n/*.treactr-toggle-thumb {\n  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;\n  position: absolute;\n  top: 1px;\n  left: 1px;\n  width: 19px;\n  height: 19px;\n  border: 1px solid #4D4D4D;\n  border-radius: 50%;\n  background-color: #FAFAFA;\n\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n\n  -webkit-transition: all 0.25s ease;\n  -moz-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n}*/\n\n/*.treactr-toggle--checked .treactr-toggle-thumb {\n  left: 17px;\n}*/\n\n/*.treactr-toggle--focus .treactr-toggle-thumb {\n  -webkit-box-shadow: 0px 0px 3px 2px #0099E0;\n  -moz-box-shadow: 0px 0px 3px 2px #0099E0;\n  box-shadow: 0px 0px 2px 3px #0099E0;\n}*/\n\n/*.treactr-toggle:active:not(.treactr-toggle--disabled) .treactr-toggle-thumb {\n  -webkit-box-shadow: 0px 0px 5px 5px #0099E0;\n  -moz-box-shadow: 0px 0px 5px 5px #0099E0;\n  box-shadow: 0px 0px 5px 5px #0099E0;\n}*/\n", ""]);
+	exports.push([module.id, ".treactr-toggle {\n  display: inline-block;\n  position: relative;\n  cursor: pointer;\n  background-color: transparent;\n  border: 0;\n  padding: 0;\n\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n\n  /*-webkit-tap-highlight-color: rgba(0,0,0,0);\n  -webkit-tap-highlight-color: transparent;*/\n}\n\n.treactr-toggle-screenreader-only {\n  border: 0;\n  clip: rect(0 0 0 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}\n\n.treactr-toggle--disabled {\n  cursor: not-allowed;\n  opacity: 0.5;\n  -webkit-transition: opacity 0.25s;\n  transition: opacity 0.25s;\n}\n\n.treactr-toggle-track {\n  width: 37px;\n  height: 21px;\n  padding: 0;\n  border: solid 1px black;\n  border-radius: 3px;\n  background: #1C1D1D;\n  -webkit-transition: all 0.2s ease;\n  -moz-transition: all 0.2s ease;\n  transition: all 0.2s ease;\n}\n\n.treactr-toggle:hover:not(.treactr-toggle--disabled) .treactr-toggle-track {\n  background-color: #363737;\n}\n\n.treactr-toggle--checked .treactr-toggle-track {\n  background-color: #FFA606;\n}\n\n.treactr-toggle--checked:hover:not(.treactr-toggle--disabled) .treactr-toggle-track {\n  background-color: #FFC020;\n}\n\n.treactr-toggle-track-check {\n  position: absolute;\n  width: 10px;\n  height: 10px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  right: 17px;\n  opacity: 0;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-toggle--checked .treactr-toggle-track-check {\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-toggle-track-x {\n  position: absolute;\n  width: 10px;\n  height: 10px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  right: 17px;\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-toggle--checked .treactr-toggle-track-x {\n  opacity: 0;\n}\n\n/*.treactr-toggle-thumb {\n  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;\n  position: absolute;\n  top: 1px;\n  left: 1px;\n  width: 19px;\n  height: 19px;\n  border: 1px solid #4D4D4D;\n  border-radius: 50%;\n  background-color: #FAFAFA;\n\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n\n  -webkit-transition: all 0.25s ease;\n  -moz-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n}*/\n\n/*.treactr-toggle--checked .treactr-toggle-thumb {\n  left: 17px;\n}*/\n\n/*.treactr-toggle--focus .treactr-toggle-thumb {\n  -webkit-box-shadow: 0px 0px 3px 2px #0099E0;\n  -moz-box-shadow: 0px 0px 3px 2px #0099E0;\n  box-shadow: 0px 0px 2px 3px #0099E0;\n}*/\n\n/*.treactr-toggle:active:not(.treactr-toggle--disabled) .treactr-toggle-thumb {\n  -webkit-box-shadow: 0px 0px 5px 5px #0099E0;\n  -moz-box-shadow: 0px 0px 5px 5px #0099E0;\n  box-shadow: 0px 0px 5px 5px #0099E0;\n}*/\n\n.treactr-kill {\n  display: inline-block;\n  position: relative;\n  cursor: pointer;\n  background-color: transparent;\n  border: 0;\n  padding: 0;\n\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n\n  /*-webkit-tap-highlight-color: rgba(0,0,0,0);\n  -webkit-tap-highlight-color: transparent;*/\n}\n\n.treactr-kill-screenreader-only {\n  border: 0;\n  clip: rect(0 0 0 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}\n\n.treactr-kill--disabled {\n  cursor: not-allowed;\n  opacity: 0.5;\n  -webkit-transition: opacity 0.25s;\n  transition: opacity 0.25s;\n}\n\n.treactr-kill-track {\n  width: 11px;\n  height: 11px;\n  padding: 0;\n  border: solid 1px black;\n  border-radius: 50%;\n  background: #6A5D5E;\n  -webkit-transition: all 0.2s ease;\n  -moz-transition: all 0.2s ease;\n  transition: all 0.2s ease;\n}\n\n.treactr-kill:hover:not(.treactr-kill--disabled) .treactr-kill-track {\n  background-color: #847778;\n}\n\n.treactr-kill--checked .treactr-kill-track {\n  background-color: #97FCFF;\n}\n\n.treactr-kill--checked:hover:not(.treactr-kill--disabled) .treactr-kill-track {\n  background-color: #B1FFFF;\n}\n\n.treactr-kill-track-check {\n  position: absolute;\n  width: 10px;\n  height: 10px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  right: 17px;\n  opacity: 0;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-kill--checked .treactr-kill-track-check {\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-kill-track-x {\n  position: absolute;\n  width: 10px;\n  height: 10px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  right: 17px;\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-kill--checked .treactr-kill-track-x {\n  opacity: 0;\n}\n", ""]);
 	
 	// exports
 
