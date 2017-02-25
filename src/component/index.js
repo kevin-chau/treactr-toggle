@@ -180,12 +180,8 @@ class Kill extends Toggle {
         onTouchMove={this.handleTouchMove}
         onTouchEnd={this.handleTouchEnd}>
         <div className='treactr-kill-track'>
-          <div className='treactr-kill-track-check'>
-            {this.getIcon('checked')}
-          </div>
-          <div className='treactr-kill-track-x'>
-            {this.getIcon('unchecked')}
-          </div>
+          <div className='treactr-kill-track-check' />
+          <div className='treactr-kill-track-x' />
         </div>
         <div className='treactr-kill-thumb' />
 

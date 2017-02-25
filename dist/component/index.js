@@ -257,16 +257,8 @@ var Kill = function (_Toggle) {
         _react2.default.createElement(
           'div',
           { className: 'treactr-kill-track' },
-          _react2.default.createElement(
-            'div',
-            { className: 'treactr-kill-track-check' },
-            this.getIcon('checked')
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'treactr-kill-track-x' },
-            this.getIcon('unchecked')
-          )
+          _react2.default.createElement('div', { className: 'treactr-kill-track-check' }),
+          _react2.default.createElement('div', { className: 'treactr-kill-track-x' })
         ),
         _react2.default.createElement('div', { className: 'treactr-kill-thumb' }),
         _react2.default.createElement('input', _extends({}, inputProps, {
