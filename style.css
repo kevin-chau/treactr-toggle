@@ -238,3 +238,108 @@
 .treactr-kill--checked .treactr-kill-track-x {
   opacity: 0;
 }
+
+/**********************
+  FX TOGGLES
+***********************/
+
+.treactr-fxtoggle {
+  display: inline-block;
+  position: relative;
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  padding: 0;
+
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.treactr-fxtoggle-screenreader-only {
+  border: 0;
+  clip: rect(0 0 0 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  width: 1px;
+}
+
+.treactr-fxtoggle--disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  -webkit-transition: opacity 0.25s;
+  transition: opacity 0.25s;
+}
+
+.treactr-fxtoggle-track {
+  width: 21px;
+  height: 23px;
+  padding: 0;
+  border: solid 1px black;
+  border-radius: 3px;
+  background: #1C1D1D;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.treactr-fxtoggle:hover:not(.treactr-fxtoggle--disabled) .treactr-fxtoggle-track {
+  background-color: #363737;
+}
+
+.treactr-fxtoggle--checked .treactr-fxtoggle-track {
+  background-color: #FFA606;
+}
+
+.treactr-fxtoggle--checked:hover:not(.treactr-fxtoggle--disabled) .treactr-fxtoggle-track {
+  background-color: #FFC020;
+}
+
+.treactr-fxtoggle-track-check {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 0px;
+  bottom: 0px;
+  margin-top: auto;
+  margin-bottom: auto;
+  line-height: 0;
+  right: 17px;
+  opacity: 0;
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+}
+
+.treactr-fxtoggle--checked .treactr-fxtoggle-track-check {
+  opacity: 1;
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+}
+
+.treactr-fxtoggle-track-x {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  top: 0px;
+  bottom: 0px;
+  margin-top: auto;
+  margin-bottom: auto;
+  line-height: 0;
+  right: 17px;
+  opacity: 1;
+  -webkit-transition: opacity 0.25s ease;
+  -moz-transition: opacity 0.25s ease;
+  transition: opacity 0.25s ease;
+}
+
+.treactr-fxtoggle--checked .treactr-fxtoggle-track-x {
+  opacity: 0;
+}

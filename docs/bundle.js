@@ -21971,7 +21971,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.Kill = exports.Toggle = undefined;
+	exports.FxToggle = exports.Kill = exports.Toggle = undefined;
 	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
@@ -22243,8 +22243,62 @@
 	  return Kill;
 	}(Toggle);
 	
+	var FxToggle = function (_Toggle2) {
+	  _inherits(FxToggle, _Toggle2);
+	
+	  function FxToggle() {
+	    _classCallCheck(this, FxToggle);
+	
+	    return _possibleConstructorReturn(this, (FxToggle.__proto__ || Object.getPrototypeOf(FxToggle)).apply(this, arguments));
+	  }
+	
+	  _createClass(FxToggle, [{
+	    key: 'render',
+	    value: function render() {
+	      var _this6 = this;
+	
+	      var _props3 = this.props,
+	          className = _props3.className,
+	          _icons = _props3.icons,
+	          inputProps = _objectWithoutProperties(_props3, ['className', 'icons']);
+	
+	      var classes = (0, _classnames2.default)('treactr-kill', {
+	        'treactr-kill--checked': this.state.checked,
+	        'treactr-kill--focus': this.state.hasFocus,
+	        'treactr-kill--disabled': this.props.disabled
+	      }, className);
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { className: classes,
+	          onClick: this.handleClick,
+	          onTouchStart: this.handleTouchStart,
+	          onTouchMove: this.handleTouchMove,
+	          onTouchEnd: this.handleTouchEnd },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'treactr-kill-track' },
+	          _react2.default.createElement('div', { className: 'treactr-kill-track-check' }),
+	          _react2.default.createElement('div', { className: 'treactr-kill-track-x' })
+	        ),
+	        _react2.default.createElement('input', _extends({}, inputProps, {
+	          ref: function ref(_ref3) {
+	            _this6.input = _ref3;
+	          },
+	          onFocus: this.handleFocus,
+	          onBlur: this.handleBlur,
+	          className: 'treactr-kill-screenreader-only',
+	          type: 'checkbox' }))
+	      );
+	    }
+	  }]);
+	
+	  return FxToggle;
+	}(Toggle);
+	
 	exports.Toggle = Toggle;
 	exports.Kill = Kill;
+	exports.FxToggle = FxToggle;
 
 /***/ },
 /* 179 */
@@ -22310,20 +22364,58 @@
 	  value: true
 	});
 	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	exports.default = function () {
-	  return _react2.default.createElement(
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var ON = function (_React$Component) {
+	  _inherits(ON, _React$Component);
+	
+	  function ON() {
+	    _classCallCheck(this, ON);
+	
+	    return _possibleConstructorReturn(this, (ON.__proto__ || Object.getPrototypeOf(ON)).apply(this, arguments));
+	  }
+	
+	  _createClass(ON, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'svg',
+	        { width: '37', height: '21', viewBox: '0 0 37 21' },
+	        _react2.default.createElement(
+	          'text',
+	          { x: '0', y: '45%', fontWeight: '500', fontSize: '11', fill: '#34230B' },
+	          'ON'
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return ON;
+	}(_react2.default.Component);
+	
+	exports.default = ON;
+	
+	
+	var ON1 = function ON1() {
+	  _react2.default.createElement(
 	    'svg',
 	    { width: '37', height: '21', viewBox: '0 0 37 21' },
 	    _react2.default.createElement(
 	      'text',
 	      { x: '0', y: '45%', fontWeight: '500', fontSize: '11', fill: '#34230B' },
-	      'ON'
+	      '1'
 	    )
 	  );
 	};
@@ -22338,20 +22430,58 @@
 	  value: true
 	});
 	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	exports.default = function () {
-	  return _react2.default.createElement(
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var OFF = function (_React$Component) {
+	  _inherits(OFF, _React$Component);
+	
+	  function OFF() {
+	    _classCallCheck(this, OFF);
+	
+	    return _possibleConstructorReturn(this, (OFF.__proto__ || Object.getPrototypeOf(OFF)).apply(this, arguments));
+	  }
+	
+	  _createClass(OFF, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'svg',
+	        { width: '37', height: '21', viewBox: '0 0 37 21' },
+	        _react2.default.createElement(
+	          'text',
+	          { x: '0', y: '45%', fontWeight: '500', fontSize: '11', fill: '#A9A9A9' },
+	          'ON'
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return OFF;
+	}(_react2.default.Component);
+	
+	exports.default = OFF;
+	
+	
+	var OFF1 = function OFF1() {
+	  _react2.default.createElement(
 	    'svg',
 	    { width: '37', height: '21', viewBox: '0 0 37 21' },
 	    _react2.default.createElement(
 	      'text',
 	      { x: '0', y: '45%', fontWeight: '500', fontSize: '11', fill: '#A9A9A9' },
-	      'ON'
+	      '1'
 	    )
 	  );
 	};
@@ -22422,7 +22552,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".treactr-toggle {\n  display: inline-block;\n  position: relative;\n  cursor: pointer;\n  background-color: transparent;\n  border: 0;\n  padding: 0;\n\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n\n  /*-webkit-tap-highlight-color: rgba(0,0,0,0);\n  -webkit-tap-highlight-color: transparent;*/\n}\n\n.treactr-toggle-screenreader-only {\n  border: 0;\n  clip: rect(0 0 0 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}\n\n.treactr-toggle--disabled {\n  cursor: not-allowed;\n  opacity: 0.5;\n  -webkit-transition: opacity 0.25s;\n  transition: opacity 0.25s;\n}\n\n.treactr-toggle-track {\n  width: 37px;\n  height: 21px;\n  padding: 0;\n  border: solid 1px black;\n  border-radius: 3px;\n  background: #1C1D1D;\n  -webkit-transition: all 0.2s ease;\n  -moz-transition: all 0.2s ease;\n  transition: all 0.2s ease;\n}\n\n.treactr-toggle:hover:not(.treactr-toggle--disabled) .treactr-toggle-track {\n  background-color: #363737;\n}\n\n.treactr-toggle--checked .treactr-toggle-track {\n  background-color: #FFA606;\n}\n\n.treactr-toggle--checked:hover:not(.treactr-toggle--disabled) .treactr-toggle-track {\n  background-color: #FFC020;\n}\n\n.treactr-toggle-track-check {\n  position: absolute;\n  width: 10px;\n  height: 10px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  right: 17px;\n  opacity: 0;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-toggle--checked .treactr-toggle-track-check {\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-toggle-track-x {\n  position: absolute;\n  width: 10px;\n  height: 10px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  right: 17px;\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-toggle--checked .treactr-toggle-track-x {\n  opacity: 0;\n}\n\n/*.treactr-toggle-thumb {\n  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;\n  position: absolute;\n  top: 1px;\n  left: 1px;\n  width: 19px;\n  height: 19px;\n  border: 1px solid #4D4D4D;\n  border-radius: 50%;\n  background-color: #FAFAFA;\n\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n\n  -webkit-transition: all 0.25s ease;\n  -moz-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n}*/\n\n/*.treactr-toggle--checked .treactr-toggle-thumb {\n  left: 17px;\n}*/\n\n/*.treactr-toggle--focus .treactr-toggle-thumb {\n  -webkit-box-shadow: 0px 0px 3px 2px #0099E0;\n  -moz-box-shadow: 0px 0px 3px 2px #0099E0;\n  box-shadow: 0px 0px 2px 3px #0099E0;\n}*/\n\n/*.treactr-toggle:active:not(.treactr-toggle--disabled) .treactr-toggle-thumb {\n  -webkit-box-shadow: 0px 0px 5px 5px #0099E0;\n  -moz-box-shadow: 0px 0px 5px 5px #0099E0;\n  box-shadow: 0px 0px 5px 5px #0099E0;\n}*/\n\n.treactr-kill {\n  position: relative;\n  cursor: pointer;\n  background-color: transparent;\n  border: 0;\n  padding: 0;\n\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n\n  /*-webkit-tap-highlight-color: rgba(0,0,0,0);\n  -webkit-tap-highlight-color: transparent;*/\n}\n\n.treactr-kill-screenreader-only {\n  border: 0;\n  clip: rect(0 0 0 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}\n\n.treactr-kill--disabled {\n  cursor: not-allowed;\n  opacity: 0.5;\n  -webkit-transition: opacity 0.25s;\n  transition: opacity 0.25s;\n}\n\n.treactr-kill-track {\n  width: 11px;\n  height: 11px;\n  padding: 0;\n  border: solid 1px black;\n  border-radius: 50%;\n  background: #6A5D5E;\n  -webkit-transition: all 0.2s ease;\n  -moz-transition: all 0.2s ease;\n  transition: all 0.2s ease;\n}\n\n.treactr-kill:hover:not(.treactr-kill--disabled) .treactr-kill-track {\n  background-color: #847778;\n}\n\n.treactr-kill--checked .treactr-kill-track {\n  background-color: #97FCFF;\n}\n\n.treactr-kill--checked:hover:not(.treactr-kill--disabled) .treactr-kill-track {\n  background-color: #B1FFFF;\n}\n\n.treactr-kill-track-check {\n  position: absolute;\n  width: 10px;\n  height: 10px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  right: 17px;\n  opacity: 0;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-kill--checked .treactr-kill-track-check {\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-kill-track-x {\n  position: absolute;\n  width: 10px;\n  height: 10px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  right: 17px;\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-kill--checked .treactr-kill-track-x {\n  opacity: 0;\n}\n", ""]);
+	exports.push([module.id, ".treactr-toggle {\n  display: inline-block;\n  position: relative;\n  cursor: pointer;\n  background-color: transparent;\n  border: 0;\n  padding: 0;\n\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n\n  /*-webkit-tap-highlight-color: rgba(0,0,0,0);\n  -webkit-tap-highlight-color: transparent;*/\n}\n\n.treactr-toggle-screenreader-only {\n  border: 0;\n  clip: rect(0 0 0 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}\n\n.treactr-toggle--disabled {\n  cursor: not-allowed;\n  opacity: 0.5;\n  -webkit-transition: opacity 0.25s;\n  transition: opacity 0.25s;\n}\n\n.treactr-toggle-track {\n  width: 37px;\n  height: 21px;\n  padding: 0;\n  border: solid 1px black;\n  border-radius: 3px;\n  background: #1C1D1D;\n  -webkit-transition: all 0.2s ease;\n  -moz-transition: all 0.2s ease;\n  transition: all 0.2s ease;\n}\n\n.treactr-toggle:hover:not(.treactr-toggle--disabled) .treactr-toggle-track {\n  background-color: #363737;\n}\n\n.treactr-toggle--checked .treactr-toggle-track {\n  background-color: #FFA606;\n}\n\n.treactr-toggle--checked:hover:not(.treactr-toggle--disabled) .treactr-toggle-track {\n  background-color: #FFC020;\n}\n\n.treactr-toggle-track-check {\n  position: absolute;\n  width: 10px;\n  height: 10px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  right: 17px;\n  opacity: 0;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-toggle--checked .treactr-toggle-track-check {\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-toggle-track-x {\n  position: absolute;\n  width: 10px;\n  height: 10px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  right: 17px;\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-toggle--checked .treactr-toggle-track-x {\n  opacity: 0;\n}\n\n/*.treactr-toggle-thumb {\n  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;\n  position: absolute;\n  top: 1px;\n  left: 1px;\n  width: 19px;\n  height: 19px;\n  border: 1px solid #4D4D4D;\n  border-radius: 50%;\n  background-color: #FAFAFA;\n\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n\n  -webkit-transition: all 0.25s ease;\n  -moz-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n}*/\n\n/*.treactr-toggle--checked .treactr-toggle-thumb {\n  left: 17px;\n}*/\n\n/*.treactr-toggle--focus .treactr-toggle-thumb {\n  -webkit-box-shadow: 0px 0px 3px 2px #0099E0;\n  -moz-box-shadow: 0px 0px 3px 2px #0099E0;\n  box-shadow: 0px 0px 2px 3px #0099E0;\n}*/\n\n/*.treactr-toggle:active:not(.treactr-toggle--disabled) .treactr-toggle-thumb {\n  -webkit-box-shadow: 0px 0px 5px 5px #0099E0;\n  -moz-box-shadow: 0px 0px 5px 5px #0099E0;\n  box-shadow: 0px 0px 5px 5px #0099E0;\n}*/\n\n.treactr-kill {\n  position: relative;\n  cursor: pointer;\n  background-color: transparent;\n  border: 0;\n  padding: 0;\n\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n\n  /*-webkit-tap-highlight-color: rgba(0,0,0,0);\n  -webkit-tap-highlight-color: transparent;*/\n}\n\n.treactr-kill-screenreader-only {\n  border: 0;\n  clip: rect(0 0 0 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}\n\n.treactr-kill--disabled {\n  cursor: not-allowed;\n  opacity: 0.5;\n  -webkit-transition: opacity 0.25s;\n  transition: opacity 0.25s;\n}\n\n.treactr-kill-track {\n  width: 9px;\n  height: 9px;\n  padding: 0;\n  border: solid 1px black;\n  border-radius: 50%;\n  background: #6A5D5E;\n  -webkit-transition: all 0.2s ease;\n  -moz-transition: all 0.2s ease;\n  transition: all 0.2s ease;\n}\n\n.treactr-kill:hover:not(.treactr-kill--disabled) .treactr-kill-track {\n  background-color: #847778;\n}\n\n.treactr-kill--checked .treactr-kill-track {\n  background-color: #97FCFF;\n}\n\n.treactr-kill--checked:hover:not(.treactr-kill--disabled) .treactr-kill-track {\n  background-color: #B1FFFF;\n}\n\n.treactr-kill-track-check {\n  position: absolute;\n  width: 9px;\n  height: 9px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  opacity: 0;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-kill--checked .treactr-kill-track-check {\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-kill-track-x {\n  position: absolute;\n  width: 9px;\n  height: 9px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-kill--checked .treactr-kill-track-x {\n  opacity: 0;\n}\n", ""]);
 	
 	// exports
 
@@ -22500,7 +22630,7 @@
 			};
 		},
 		isOldIE = memoize(function() {
-			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+			return /msie [6-9]\b/.test(self.navigator.userAgent.toLowerCase());
 		}),
 		getHeadElement = memoize(function () {
 			return document.head || document.getElementsByTagName("head")[0];

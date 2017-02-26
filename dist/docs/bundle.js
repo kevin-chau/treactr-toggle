@@ -21971,7 +21971,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.Kill = exports.Toggle = undefined;
+	exports.FxToggle = exports.Kill = exports.Toggle = undefined;
 	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
@@ -22243,8 +22243,62 @@
 	  return Kill;
 	}(Toggle);
 	
+	var FxToggle = function (_Toggle2) {
+	  _inherits(FxToggle, _Toggle2);
+	
+	  function FxToggle() {
+	    _classCallCheck(this, FxToggle);
+	
+	    return _possibleConstructorReturn(this, (FxToggle.__proto__ || Object.getPrototypeOf(FxToggle)).apply(this, arguments));
+	  }
+	
+	  _createClass(FxToggle, [{
+	    key: 'render',
+	    value: function render() {
+	      var _this6 = this;
+	
+	      var _props3 = this.props,
+	          className = _props3.className,
+	          _icons = _props3.icons,
+	          inputProps = _objectWithoutProperties(_props3, ['className', 'icons']);
+	
+	      var classes = (0, _classnames2.default)('treactr-kill', {
+	        'treactr-kill--checked': this.state.checked,
+	        'treactr-kill--focus': this.state.hasFocus,
+	        'treactr-kill--disabled': this.props.disabled
+	      }, className);
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { className: classes,
+	          onClick: this.handleClick,
+	          onTouchStart: this.handleTouchStart,
+	          onTouchMove: this.handleTouchMove,
+	          onTouchEnd: this.handleTouchEnd },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'treactr-kill-track' },
+	          _react2.default.createElement('div', { className: 'treactr-kill-track-check' }),
+	          _react2.default.createElement('div', { className: 'treactr-kill-track-x' })
+	        ),
+	        _react2.default.createElement('input', _extends({}, inputProps, {
+	          ref: function ref(_ref3) {
+	            _this6.input = _ref3;
+	          },
+	          onFocus: this.handleFocus,
+	          onBlur: this.handleBlur,
+	          className: 'treactr-kill-screenreader-only',
+	          type: 'checkbox' }))
+	      );
+	    }
+	  }]);
+	
+	  return FxToggle;
+	}(Toggle);
+	
 	exports.Toggle = Toggle;
 	exports.Kill = Kill;
+	exports.FxToggle = FxToggle;
 
 /***/ },
 /* 179 */
@@ -22310,20 +22364,58 @@
 	  value: true
 	});
 	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	exports.default = function () {
-	  return _react2.default.createElement(
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var ON = function (_React$Component) {
+	  _inherits(ON, _React$Component);
+	
+	  function ON() {
+	    _classCallCheck(this, ON);
+	
+	    return _possibleConstructorReturn(this, (ON.__proto__ || Object.getPrototypeOf(ON)).apply(this, arguments));
+	  }
+	
+	  _createClass(ON, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'svg',
+	        { width: '37', height: '21', viewBox: '0 0 37 21' },
+	        _react2.default.createElement(
+	          'text',
+	          { x: '0', y: '45%', fontWeight: '500', fontSize: '11', fill: '#34230B' },
+	          'ON'
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return ON;
+	}(_react2.default.Component);
+	
+	exports.default = ON;
+	
+	
+	var ON1 = function ON1() {
+	  _react2.default.createElement(
 	    'svg',
 	    { width: '37', height: '21', viewBox: '0 0 37 21' },
 	    _react2.default.createElement(
 	      'text',
 	      { x: '0', y: '45%', fontWeight: '500', fontSize: '11', fill: '#34230B' },
-	      'ON'
+	      '1'
 	    )
 	  );
 	};
@@ -22338,20 +22430,58 @@
 	  value: true
 	});
 	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
 	var _react = __webpack_require__(1);
 	
 	var _react2 = _interopRequireDefault(_react);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	exports.default = function () {
-	  return _react2.default.createElement(
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var OFF = function (_React$Component) {
+	  _inherits(OFF, _React$Component);
+	
+	  function OFF() {
+	    _classCallCheck(this, OFF);
+	
+	    return _possibleConstructorReturn(this, (OFF.__proto__ || Object.getPrototypeOf(OFF)).apply(this, arguments));
+	  }
+	
+	  _createClass(OFF, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'svg',
+	        { width: '37', height: '21', viewBox: '0 0 37 21' },
+	        _react2.default.createElement(
+	          'text',
+	          { x: '0', y: '45%', fontWeight: '500', fontSize: '11', fill: '#A9A9A9' },
+	          'ON'
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return OFF;
+	}(_react2.default.Component);
+	
+	exports.default = OFF;
+	
+	
+	var OFF1 = function OFF1() {
+	  _react2.default.createElement(
 	    'svg',
 	    { width: '37', height: '21', viewBox: '0 0 37 21' },
 	    _react2.default.createElement(
 	      'text',
 	      { x: '0', y: '45%', fontWeight: '500', fontSize: '11', fill: '#A9A9A9' },
-	      'ON'
+	      '1'
 	    )
 	  );
 	};
@@ -22500,7 +22630,7 @@
 			};
 		},
 		isOldIE = memoize(function() {
-			return /msie [6-9]\b/.test(window.navigator.userAgent.toLowerCase());
+			return /msie [6-9]\b/.test(self.navigator.userAgent.toLowerCase());
 		}),
 		getHeadElement = memoize(function () {
 			return document.head || document.getElementsByTagName("head")[0];

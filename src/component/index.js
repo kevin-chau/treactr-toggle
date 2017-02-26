@@ -1,7 +1,7 @@
 import React, { PureComponent, PropTypes } from 'react'
 import classNames from 'classnames'
-import ON from './on'
-import OFF from './off'
+import { ON, ON1, ON2 } from './on'
+import { OFF, OFF1, OFF2 } from './off'
 import { pointerCoord } from './util'
 
 class Toggle extends PureComponent {
@@ -164,6 +164,62 @@ Toggle.propTypes = {
   ]),
 }
 
+class FxToggle extends Toggle {
+  render () {
+    const { className, icons: _icons, ...inputProps } = this.props
+    const classes = classNames('treactr-fxtoggle', {
+      'treactr-fxtoggle--checked': this.state.checked,
+      'treactr-fxtoggle--focus': this.state.hasFocus,
+      'treactr-fxtoggle--disabled': this.props.disabled,
+    }, className)
+
+    return (
+      <div className={classes}
+        onClick={this.handleClick}
+        onTouchStart={this.handleTouchStart}
+        onTouchMove={this.handleTouchMove}
+        onTouchEnd={this.handleTouchEnd}>
+        <div className='treactr-fxtoggle-track'>
+          <div className='treactr-fxtoggle-track-check'>
+            {this.getIcon('checked')}
+          </div>
+          <div className='treactr-fxtoggle-track-x'>
+            {this.getIcon('unchecked')}
+          </div>
+        </div>
+
+        <input
+          {...inputProps}
+          ref={ref => { this.input = ref }}
+          onFocus={this.handleFocus}
+          onBlur={this.handleBlur}
+          className='treactr-fxtoggle-screenreader-only'
+          type='checkbox' />
+      </div>
+    )
+  }
+}
+
+class FxToggle1 extends FxToggle {
+}
+
+FxToggle1.defaultProps = {
+  icons: {
+    checked: <ON1 />,
+    unchecked: <OFF1 />,
+  },
+}
+
+class FxToggle2 extends FxToggle {
+}
+
+FxToggle2.defaultProps = {
+  icons: {
+    checked: <ON2 />,
+    unchecked: <OFF2 />,
+  },
+}
+
 class Kill extends Toggle {
   render () {
     const { className, icons: _icons, ...inputProps } = this.props
@@ -196,4 +252,4 @@ class Kill extends Toggle {
   }
 }
 
-export { Toggle, Kill }
+export { Toggle, Kill, FxToggle1, FxToggle2 }
