@@ -522,7 +522,23 @@
 	          onChange: this.handleTofuChange }),
 	        _react2.default.createElement(_component.FxToggle2, {
 	          defaultChecked: this.state.tofuIsReady,
-	          onChange: this.handleTofuChange })
+	          onChange: this.handleTofuChange }),
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'example' },
+	          _react2.default.createElement(
+	            'label',
+	            null,
+	            _react2.default.createElement(_component.ToggleMonitorCue, {
+	              defaultChecked: this.state.tofuIsReady,
+	              onChange: this.handleTofuChange }),
+	            _react2.default.createElement(
+	              'span',
+	              { className: 'label-text' },
+	              'Monitor Cue'
+	            )
+	          )
+	        )
 	      );
 	    }
 	  }]);
@@ -21977,7 +21993,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.FxToggle2 = exports.FxToggle1 = exports.Kill = exports.Toggle = undefined;
+	exports.ToggleMonitorCue = exports.FxToggle2 = exports.FxToggle1 = exports.Kill = exports.Toggle = undefined;
 	
 	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 	
@@ -22291,8 +22307,77 @@
 	  }
 	};
 	
-	var Kill = function (_Toggle2) {
-	  _inherits(Kill, _Toggle2);
+	var ToggleMonitorCue = function (_Toggle2) {
+	  _inherits(ToggleMonitorCue, _Toggle2);
+	
+	  function ToggleMonitorCue() {
+	    _classCallCheck(this, ToggleMonitorCue);
+	
+	    return _possibleConstructorReturn(this, (ToggleMonitorCue.__proto__ || Object.getPrototypeOf(ToggleMonitorCue)).apply(this, arguments));
+	  }
+	
+	  _createClass(ToggleMonitorCue, [{
+	    key: 'render',
+	    value: function render() {
+	      var _this8 = this;
+	
+	      var _props3 = this.props,
+	          className = _props3.className,
+	          _icons = _props3.icons,
+	          inputProps = _objectWithoutProperties(_props3, ['className', 'icons']);
+	
+	      var classes = (0, _classnames2.default)('treactr-mc', {
+	        'treactr-mc--checked': this.state.checked,
+	        'treactr-mc--focus': this.state.hasFocus,
+	        'treactr-mc--disabled': this.props.disabled
+	      }, className);
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { className: classes,
+	          onClick: this.handleClick,
+	          onTouchStart: this.handleTouchStart,
+	          onTouchMove: this.handleTouchMove,
+	          onTouchEnd: this.handleTouchEnd },
+	        _react2.default.createElement(
+	          'div',
+	          { className: 'treactr-mc-track' },
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'treactr-mc-track-check' },
+	            this.getIcon('checked')
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { className: 'treactr-mc-track-x' },
+	            this.getIcon('unchecked')
+	          )
+	        ),
+	        _react2.default.createElement('div', { className: 'treactr-mc-thumb' }),
+	        _react2.default.createElement('input', _extends({}, inputProps, {
+	          ref: function ref(_ref3) {
+	            _this8.input = _ref3;
+	          },
+	          onFocus: this.handleFocus,
+	          onBlur: this.handleBlur,
+	          className: 'treactr-mc-screenreader-only',
+	          type: 'checkbox' }))
+	      );
+	    }
+	  }]);
+	
+	  return ToggleMonitorCue;
+	}(Toggle);
+	
+	ToggleMonitorCue.defaultProps = {
+	  icons: {
+	    checked: _react2.default.createElement(_on.ON_MONITOR_CUE, null),
+	    unchecked: _react2.default.createElement(_off.OFF_MONITOR_CUE, null)
+	  }
+	};
+	
+	var Kill = function (_Toggle3) {
+	  _inherits(Kill, _Toggle3);
 	
 	  function Kill() {
 	    _classCallCheck(this, Kill);
@@ -22303,12 +22388,12 @@
 	  _createClass(Kill, [{
 	    key: 'render',
 	    value: function render() {
-	      var _this8 = this;
+	      var _this10 = this;
 	
-	      var _props3 = this.props,
-	          className = _props3.className,
-	          _icons = _props3.icons,
-	          inputProps = _objectWithoutProperties(_props3, ['className', 'icons']);
+	      var _props4 = this.props,
+	          className = _props4.className,
+	          _icons = _props4.icons,
+	          inputProps = _objectWithoutProperties(_props4, ['className', 'icons']);
 	
 	      var classes = (0, _classnames2.default)('treactr-kill', {
 	        'treactr-kill--checked': this.state.checked,
@@ -22330,8 +22415,8 @@
 	          _react2.default.createElement('div', { className: 'treactr-kill-track-x' })
 	        ),
 	        _react2.default.createElement('input', _extends({}, inputProps, {
-	          ref: function ref(_ref3) {
-	            _this8.input = _ref3;
+	          ref: function ref(_ref4) {
+	            _this10.input = _ref4;
 	          },
 	          onFocus: this.handleFocus,
 	          onBlur: this.handleBlur,
@@ -22348,6 +22433,7 @@
 	exports.Kill = Kill;
 	exports.FxToggle1 = FxToggle1;
 	exports.FxToggle2 = FxToggle2;
+	exports.ToggleMonitorCue = ToggleMonitorCue;
 
 /***/ },
 /* 179 */
@@ -22412,7 +22498,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.ON2 = exports.ON1 = exports.ON = undefined;
+	exports.ON_MONITOR_CUE = exports.ON2 = exports.ON1 = exports.ON = undefined;
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
@@ -22509,9 +22595,38 @@
 	  return ON2;
 	}(_react2.default.Component);
 	
+	var ON_MONITOR_CUE = function (_React$Component4) {
+	  _inherits(ON_MONITOR_CUE, _React$Component4);
+	
+	  function ON_MONITOR_CUE() {
+	    _classCallCheck(this, ON_MONITOR_CUE);
+	
+	    return _possibleConstructorReturn(this, (ON_MONITOR_CUE.__proto__ || Object.getPrototypeOf(ON_MONITOR_CUE)).apply(this, arguments));
+	  }
+	
+	  _createClass(ON_MONITOR_CUE, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'svg',
+	        { width: '33', height: '24', viewBox: '0 0 33 24' },
+	        _react2.default.createElement(
+	          'g',
+	          { transform: 'translate(-6,20.000000) scale(0.100000,-0.100000)',
+	            fill: '#34230B', stroke: 'none' },
+	          _react2.default.createElement('path', { d: 'M102 184 c-27 -18 -29 -66 -6 -112 20 -42 34 -40 34 3 0 27 -5 38 -21 43 -20 8 -20 8 -1 32 27 33 87 33 114 0 19 -24 19 -24 -1 -32 -16 -5 -21 -16 -21 -43 0 -43 14 -45 34 -3 38 75 10 128 -69 128 -22 0 -51 -7 -63 -16z' })
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return ON_MONITOR_CUE;
+	}(_react2.default.Component);
+	
 	exports.ON = ON;
 	exports.ON1 = ON1;
 	exports.ON2 = ON2;
+	exports.ON_MONITOR_CUE = ON_MONITOR_CUE;
 
 /***/ },
 /* 181 */
@@ -22522,7 +22637,7 @@
 	Object.defineProperty(exports, "__esModule", {
 	  value: true
 	});
-	exports.OFF2 = exports.OFF1 = exports.OFF = undefined;
+	exports.OFF_MONITOR_CUE = exports.OFF2 = exports.OFF1 = exports.OFF = undefined;
 	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
@@ -22619,9 +22734,38 @@
 	  return OFF2;
 	}(_react2.default.Component);
 	
+	var OFF_MONITOR_CUE = function (_React$Component4) {
+	  _inherits(OFF_MONITOR_CUE, _React$Component4);
+	
+	  function OFF_MONITOR_CUE() {
+	    _classCallCheck(this, OFF_MONITOR_CUE);
+	
+	    return _possibleConstructorReturn(this, (OFF_MONITOR_CUE.__proto__ || Object.getPrototypeOf(OFF_MONITOR_CUE)).apply(this, arguments));
+	  }
+	
+	  _createClass(OFF_MONITOR_CUE, [{
+	    key: 'render',
+	    value: function render() {
+	      return _react2.default.createElement(
+	        'svg',
+	        { width: '33', height: '24', viewBox: '0 0 33 24' },
+	        _react2.default.createElement(
+	          'g',
+	          { transform: 'translate(-6,20.000000) scale(0.100000,-0.100000)',
+	            fill: '#d8d8d8', stroke: 'none' },
+	          _react2.default.createElement('path', { d: 'M102 184 c-27 -18 -29 -66 -6 -112 20 -42 34 -40 34 3 0 27 -5 38 -21 43 -20 8 -20 8 -1 32 27 33 87 33 114 0 19 -24 19 -24 -1 -32 -16 -5 -21 -16 -21 -43 0 -43 14 -45 34 -3 38 75 10 128 -69 128 -22 0 -51 -7 -63 -16z' })
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return OFF_MONITOR_CUE;
+	}(_react2.default.Component);
+	
 	exports.OFF = OFF;
 	exports.OFF1 = OFF1;
 	exports.OFF2 = OFF2;
+	exports.OFF_MONITOR_CUE = OFF_MONITOR_CUE;
 
 /***/ },
 /* 182 */
@@ -22689,7 +22833,7 @@
 	
 	
 	// module
-	exports.push([module.id, ".treactr-toggle {\n  display: inline-block;\n  position: relative;\n  cursor: pointer;\n  background-color: transparent;\n  border: 0;\n  padding: 0;\n\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n\n  /*-webkit-tap-highlight-color: rgba(0,0,0,0);\n  -webkit-tap-highlight-color: transparent;*/\n}\n\n.treactr-toggle-screenreader-only {\n  border: 0;\n  clip: rect(0 0 0 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}\n\n.treactr-toggle--disabled {\n  cursor: not-allowed;\n  opacity: 0.5;\n  -webkit-transition: opacity 0.25s;\n  transition: opacity 0.25s;\n}\n\n.treactr-toggle-track {\n  width: 37px;\n  height: 21px;\n  padding: 0;\n  border: solid 1px black;\n  border-radius: 3px;\n  background: #1C1D1D;\n  -webkit-transition: all 0.2s ease;\n  -moz-transition: all 0.2s ease;\n  transition: all 0.2s ease;\n}\n\n.treactr-toggle:hover:not(.treactr-toggle--disabled) .treactr-toggle-track {\n  background-color: #363737;\n}\n\n.treactr-toggle--checked .treactr-toggle-track {\n  background-color: #FFA606;\n}\n\n.treactr-toggle--checked:hover:not(.treactr-toggle--disabled) .treactr-toggle-track {\n  background-color: #FFC020;\n}\n\n.treactr-toggle-track-check {\n  position: absolute;\n  width: 10px;\n  height: 10px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  right: 17px;\n  opacity: 0;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-toggle--checked .treactr-toggle-track-check {\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-toggle-track-x {\n  position: absolute;\n  width: 10px;\n  height: 10px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  right: 17px;\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-toggle--checked .treactr-toggle-track-x {\n  opacity: 0;\n}\n\n/*.treactr-toggle-thumb {\n  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;\n  position: absolute;\n  top: 1px;\n  left: 1px;\n  width: 19px;\n  height: 19px;\n  border: 1px solid #4D4D4D;\n  border-radius: 50%;\n  background-color: #FAFAFA;\n\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n\n  -webkit-transition: all 0.25s ease;\n  -moz-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n}*/\n\n/*.treactr-toggle--checked .treactr-toggle-thumb {\n  left: 17px;\n}*/\n\n/*.treactr-toggle--focus .treactr-toggle-thumb {\n  -webkit-box-shadow: 0px 0px 3px 2px #0099E0;\n  -moz-box-shadow: 0px 0px 3px 2px #0099E0;\n  box-shadow: 0px 0px 2px 3px #0099E0;\n}*/\n\n/*.treactr-toggle:active:not(.treactr-toggle--disabled) .treactr-toggle-thumb {\n  -webkit-box-shadow: 0px 0px 5px 5px #0099E0;\n  -moz-box-shadow: 0px 0px 5px 5px #0099E0;\n  box-shadow: 0px 0px 5px 5px #0099E0;\n}*/\n\n.treactr-kill {\n  position: relative;\n  cursor: pointer;\n  background-color: transparent;\n  border: 0;\n  padding: 0;\n\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n\n  /*-webkit-tap-highlight-color: rgba(0,0,0,0);\n  -webkit-tap-highlight-color: transparent;*/\n}\n\n.treactr-kill-screenreader-only {\n  border: 0;\n  clip: rect(0 0 0 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}\n\n.treactr-kill--disabled {\n  cursor: not-allowed;\n  opacity: 0.5;\n  -webkit-transition: opacity 0.25s;\n  transition: opacity 0.25s;\n}\n\n.treactr-kill-track {\n  width: 9px;\n  height: 9px;\n  padding: 0;\n  border: solid 1px black;\n  border-radius: 50%;\n  background: #6A5D5E;\n  -webkit-transition: all 0.2s ease;\n  -moz-transition: all 0.2s ease;\n  transition: all 0.2s ease;\n}\n\n.treactr-kill:hover:not(.treactr-kill--disabled) .treactr-kill-track {\n  background-color: #847778;\n}\n\n.treactr-kill--checked .treactr-kill-track {\n  background-color: #97FCFF;\n}\n\n.treactr-kill--checked:hover:not(.treactr-kill--disabled) .treactr-kill-track {\n  background-color: #B1FFFF;\n}\n\n.treactr-kill-track-check {\n  position: absolute;\n  width: 9px;\n  height: 9px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  opacity: 0;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-kill--checked .treactr-kill-track-check {\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-kill-track-x {\n  position: absolute;\n  width: 9px;\n  height: 9px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-kill--checked .treactr-kill-track-x {\n  opacity: 0;\n}\n\n/**********************\n  FX TOGGLES\n***********************/\n\n.treactr-fxtoggle {\n  display: inline-block;\n  position: relative;\n  cursor: pointer;\n  background-color: transparent;\n  border: 0;\n  padding: 0;\n\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n\n.treactr-fxtoggle-screenreader-only {\n  border: 0;\n  clip: rect(0 0 0 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}\n\n.treactr-fxtoggle--disabled {\n  cursor: not-allowed;\n  opacity: 0.5;\n  -webkit-transition: opacity 0.25s;\n  transition: opacity 0.25s;\n}\n\n.treactr-fxtoggle-track {\n  width: 21px;\n  height: 23px;\n  padding: 0;\n  border: solid 1px black;\n  border-radius: 3px;\n  background: #1C1D1D;\n  -webkit-transition: all 0.2s ease;\n  -moz-transition: all 0.2s ease;\n  transition: all 0.2s ease;\n}\n\n.treactr-fxtoggle:hover:not(.treactr-fxtoggle--disabled) .treactr-fxtoggle-track {\n  background-color: #363737;\n}\n\n.treactr-fxtoggle--checked .treactr-fxtoggle-track {\n  background-color: #FFA606;\n}\n\n.treactr-fxtoggle--checked:hover:not(.treactr-fxtoggle--disabled) .treactr-fxtoggle-track {\n  background-color: #FFC020;\n}\n\n.treactr-fxtoggle-track-check {\n  position: absolute;\n  width: 10px;\n  height: 10px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  right: 17px;\n  opacity: 0;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-fxtoggle--checked .treactr-fxtoggle-track-check {\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-fxtoggle-track-x {\n  position: absolute;\n  width: 10px;\n  height: 10px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  right: 17px;\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-fxtoggle--checked .treactr-fxtoggle-track-x {\n  opacity: 0;\n}\n", ""]);
+	exports.push([module.id, ".treactr-toggle {\n  display: inline-block;\n  position: relative;\n  cursor: pointer;\n  background-color: transparent;\n  border: 0;\n  padding: 0;\n\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n\n  /*-webkit-tap-highlight-color: rgba(0,0,0,0);\n  -webkit-tap-highlight-color: transparent;*/\n}\n\n.treactr-toggle-screenreader-only {\n  border: 0;\n  clip: rect(0 0 0 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}\n\n.treactr-toggle--disabled {\n  cursor: not-allowed;\n  opacity: 0.5;\n  -webkit-transition: opacity 0.25s;\n  transition: opacity 0.25s;\n}\n\n.treactr-toggle-track {\n  width: 37px;\n  height: 21px;\n  padding: 0;\n  border: solid 1px black;\n  border-radius: 3px;\n  background: #1C1D1D;\n  -webkit-transition: all 0.2s ease;\n  -moz-transition: all 0.2s ease;\n  transition: all 0.2s ease;\n}\n\n.treactr-toggle:hover:not(.treactr-toggle--disabled) .treactr-toggle-track {\n  background-color: #363737;\n}\n\n.treactr-toggle--checked .treactr-toggle-track {\n  background-color: #FFA606;\n}\n\n.treactr-toggle--checked:hover:not(.treactr-toggle--disabled) .treactr-toggle-track {\n  background-color: #FFC020;\n}\n\n.treactr-toggle-track-check {\n  position: absolute;\n  width: 10px;\n  height: 10px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  right: 17px;\n  opacity: 0;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-toggle--checked .treactr-toggle-track-check {\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-toggle-track-x {\n  position: absolute;\n  width: 10px;\n  height: 10px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  right: 17px;\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-toggle--checked .treactr-toggle-track-x {\n  opacity: 0;\n}\n\n/*.treactr-toggle-thumb {\n  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1) 0ms;\n  position: absolute;\n  top: 1px;\n  left: 1px;\n  width: 19px;\n  height: 19px;\n  border: 1px solid #4D4D4D;\n  border-radius: 50%;\n  background-color: #FAFAFA;\n\n  -webkit-box-sizing: border-box;\n  -moz-box-sizing: border-box;\n  box-sizing: border-box;\n\n  -webkit-transition: all 0.25s ease;\n  -moz-transition: all 0.25s ease;\n  transition: all 0.25s ease;\n}*/\n\n/*.treactr-toggle--checked .treactr-toggle-thumb {\n  left: 17px;\n}*/\n\n/*.treactr-toggle--focus .treactr-toggle-thumb {\n  -webkit-box-shadow: 0px 0px 3px 2px #0099E0;\n  -moz-box-shadow: 0px 0px 3px 2px #0099E0;\n  box-shadow: 0px 0px 2px 3px #0099E0;\n}*/\n\n/*.treactr-toggle:active:not(.treactr-toggle--disabled) .treactr-toggle-thumb {\n  -webkit-box-shadow: 0px 0px 5px 5px #0099E0;\n  -moz-box-shadow: 0px 0px 5px 5px #0099E0;\n  box-shadow: 0px 0px 5px 5px #0099E0;\n}*/\n\n.treactr-kill {\n  position: relative;\n  cursor: pointer;\n  background-color: transparent;\n  border: 0;\n  padding: 0;\n\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n\n  /*-webkit-tap-highlight-color: rgba(0,0,0,0);\n  -webkit-tap-highlight-color: transparent;*/\n}\n\n.treactr-kill-screenreader-only {\n  border: 0;\n  clip: rect(0 0 0 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}\n\n.treactr-kill--disabled {\n  cursor: not-allowed;\n  opacity: 0.5;\n  -webkit-transition: opacity 0.25s;\n  transition: opacity 0.25s;\n}\n\n.treactr-kill-track {\n  width: 9px;\n  height: 9px;\n  padding: 0;\n  border: solid 1px black;\n  border-radius: 50%;\n  background: #6A5D5E;\n  -webkit-transition: all 0.2s ease;\n  -moz-transition: all 0.2s ease;\n  transition: all 0.2s ease;\n}\n\n.treactr-kill:hover:not(.treactr-kill--disabled) .treactr-kill-track {\n  background-color: #847778;\n}\n\n.treactr-kill--checked .treactr-kill-track {\n  background-color: #97FCFF;\n}\n\n.treactr-kill--checked:hover:not(.treactr-kill--disabled) .treactr-kill-track {\n  background-color: #B1FFFF;\n}\n\n.treactr-kill-track-check {\n  position: absolute;\n  width: 9px;\n  height: 9px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  opacity: 0;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-kill--checked .treactr-kill-track-check {\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-kill-track-x {\n  position: absolute;\n  width: 9px;\n  height: 9px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-kill--checked .treactr-kill-track-x {\n  opacity: 0;\n}\n\n/**********************\n  FX TOGGLES\n***********************/\n\n.treactr-fxtoggle {\n  display: inline-block;\n  position: relative;\n  cursor: pointer;\n  background-color: transparent;\n  border: 0;\n  padding: 0;\n\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n}\n\n.treactr-fxtoggle-screenreader-only {\n  border: 0;\n  clip: rect(0 0 0 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}\n\n.treactr-fxtoggle--disabled {\n  cursor: not-allowed;\n  opacity: 0.5;\n  -webkit-transition: opacity 0.25s;\n  transition: opacity 0.25s;\n}\n\n.treactr-fxtoggle-track {\n  width: 21px;\n  height: 23px;\n  padding: 0;\n  border: solid 1px black;\n  border-radius: 3px;\n  background: #1C1D1D;\n  -webkit-transition: all 0.2s ease;\n  -moz-transition: all 0.2s ease;\n  transition: all 0.2s ease;\n}\n\n.treactr-fxtoggle:hover:not(.treactr-fxtoggle--disabled) .treactr-fxtoggle-track {\n  background-color: #363737;\n}\n\n.treactr-fxtoggle--checked .treactr-fxtoggle-track {\n  background-color: #FFA606;\n}\n\n.treactr-fxtoggle--checked:hover:not(.treactr-fxtoggle--disabled) .treactr-fxtoggle-track {\n  background-color: #FFC020;\n}\n\n.treactr-fxtoggle-track-check {\n  position: absolute;\n  width: 10px;\n  height: 10px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  right: 17px;\n  opacity: 0;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-fxtoggle--checked .treactr-fxtoggle-track-check {\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-fxtoggle-track-x {\n  position: absolute;\n  width: 10px;\n  height: 10px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: auto;\n  margin-bottom: auto;\n  line-height: 0;\n  right: 17px;\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-fxtoggle--checked .treactr-fxtoggle-track-x {\n  opacity: 0;\n}\n\n/**********************\n  MONITOR CUE TOGGLES\n***********************/\n\n.treactr-mc {\n  display: inline-block;\n  position: relative;\n  cursor: pointer;\n  background-color: transparent;\n  border: 0;\n  padding: 0;\n\n  -webkit-touch-callout: none;\n  -webkit-user-select: none;\n  -khtml-user-select: none;\n  -moz-user-select: none;\n  -ms-user-select: none;\n  user-select: none;\n\n  /*-webkit-tap-highlight-color: rgba(0,0,0,0);\n  -webkit-tap-highlight-color: transparent;*/\n}\n\n.treactr-mc-screenreader-only {\n  border: 0;\n  clip: rect(0 0 0 0);\n  height: 1px;\n  margin: -1px;\n  overflow: hidden;\n  padding: 0;\n  position: absolute;\n  width: 1px;\n}\n\n.treactr-mc--disabled {\n  cursor: not-allowed;\n  opacity: 0.5;\n  -webkit-transition: opacity 0.25s;\n  transition: opacity 0.25s;\n}\n\n.treactr-mc-track {\n  width: 33px;\n  height: 24px;\n  padding: 0;\n  border: solid 1px black;\n  border-radius: 3px;\n  background: #1C1D1D;\n  -webkit-transition: all 0.2s ease;\n  -moz-transition: all 0.2s ease;\n  transition: all 0.2s ease;\n}\n\n.treactr-mc:hover:not(.treactr-mc--disabled) .treactr-mc-track {\n  background-color: #363737;\n}\n\n.treactr-mc--checked .treactr-mc-track {\n  background-color: #77D5DD;\n}\n\n.treactr-mc--checked:hover:not(.treactr-mc--disabled) .treactr-mc-track {\n  background-color: #B1FFFF;\n}\n\n.treactr-mc-track-check {\n  position: absolute;\n  width: 10px;\n  height: 10px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: 4px;\n  margin-bottom: auto;\n  line-height: 0;\n  right: 17px;\n  opacity: 0;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-mc--checked .treactr-mc-track-check {\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-mc-track-x {\n  position: absolute;\n  width: 10px;\n  height: 10px;\n  top: 0px;\n  bottom: 0px;\n  margin-top: 4px;\n  margin-bottom: auto;\n  line-height: 0;\n  right: 17px;\n  opacity: 1;\n  -webkit-transition: opacity 0.25s ease;\n  -moz-transition: opacity 0.25s ease;\n  transition: opacity 0.25s ease;\n}\n\n.treactr-mc--checked .treactr-mc-track-x {\n  opacity: 0;\n}\n", ""]);
 	
 	// exports
 
