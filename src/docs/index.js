@@ -387,46 +387,15 @@ class App extends Component {
 
         {/* FxToggle1 */}
 
-        <div className='example'>
-          <label>
             <FxToggle1
               defaultChecked={this.state.tofuIsReady}
               onChange={this.handleTofuChange} />
-            <span className='label-text'>FxToggle1</span>
-          </label>
-
-          <pre>
-            {`<label>
-  <Toggle
-    defaultChecked={this.state.tofuIsReady}
-    icons={false}
-    onChange={this.handleTofuChange} />
-  <span>FxToggle1</span>
-</label>`}
-          </pre>
-        </div>
 
         {/* FxToggle2 */}
 
-        <div className='example'>
-          <label>
             <FxToggle2
               defaultChecked={this.state.tofuIsReady}
               onChange={this.handleTofuChange} />
-            <span className='label-text'>FxToggle2</span>
-          </label>
-
-          <pre>
-            {`<label>
-  <Toggle
-    defaultChecked={this.state.tofuIsReady}
-    icons={false}
-    onChange={this.handleTofuChange} />
-  <span>FxToggle2</span>
-</label>`}
-          </pre>
-        </div>
-
       </form>
     )
   }

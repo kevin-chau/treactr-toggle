@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.FxToggle = exports.Kill = exports.Toggle = undefined;
+exports.FxToggle2 = exports.FxToggle1 = exports.Kill = exports.Toggle = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -19,11 +19,7 @@ var _classnames2 = _interopRequireDefault(_classnames);
 
 var _on = require('./on');
 
-var _on2 = _interopRequireDefault(_on);
-
 var _off = require('./off');
-
-var _off2 = _interopRequireDefault(_off);
 
 var _util = require('./util');
 
@@ -200,8 +196,8 @@ Toggle.displayName = 'Toggle';
 
 Toggle.defaultProps = {
   icons: {
-    checked: _react2.default.createElement(_on2.default, null),
-    unchecked: _react2.default.createElement(_off2.default, null)
+    checked: _react2.default.createElement(_on.ON, null),
+    unchecked: _react2.default.createElement(_off.OFF, null)
   }
 };
 
@@ -222,16 +218,16 @@ Toggle.propTypes = {
   })])
 };
 
-var Kill = function (_Toggle) {
-  _inherits(Kill, _Toggle);
+var FxToggle = function (_Toggle) {
+  _inherits(FxToggle, _Toggle);
 
-  function Kill() {
-    _classCallCheck(this, Kill);
+  function FxToggle() {
+    _classCallCheck(this, FxToggle);
 
-    return _possibleConstructorReturn(this, (Kill.__proto__ || Object.getPrototypeOf(Kill)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (FxToggle.__proto__ || Object.getPrototypeOf(FxToggle)).apply(this, arguments));
   }
 
-  _createClass(Kill, [{
+  _createClass(FxToggle, [{
     key: 'render',
     value: function render() {
       var _this4 = this;
@@ -241,10 +237,10 @@ var Kill = function (_Toggle) {
           _icons = _props2.icons,
           inputProps = _objectWithoutProperties(_props2, ['className', 'icons']);
 
-      var classes = (0, _classnames2.default)('treactr-kill', {
-        'treactr-kill--checked': this.state.checked,
-        'treactr-kill--focus': this.state.hasFocus,
-        'treactr-kill--disabled': this.props.disabled
+      var classes = (0, _classnames2.default)('treactr-fxtoggle', {
+        'treactr-fxtoggle--checked': this.state.checked,
+        'treactr-fxtoggle--focus': this.state.hasFocus,
+        'treactr-fxtoggle--disabled': this.props.disabled
       }, className);
 
       return _react2.default.createElement(
@@ -256,9 +252,17 @@ var Kill = function (_Toggle) {
           onTouchEnd: this.handleTouchEnd },
         _react2.default.createElement(
           'div',
-          { className: 'treactr-kill-track' },
-          _react2.default.createElement('div', { className: 'treactr-kill-track-check' }),
-          _react2.default.createElement('div', { className: 'treactr-kill-track-x' })
+          { className: 'treactr-fxtoggle-track' },
+          _react2.default.createElement(
+            'div',
+            { className: 'treactr-fxtoggle-track-check' },
+            this.getIcon('checked')
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'treactr-fxtoggle-track-x' },
+            this.getIcon('unchecked')
+          )
         ),
         _react2.default.createElement('input', _extends({}, inputProps, {
           ref: function ref(_ref2) {
@@ -266,28 +270,66 @@ var Kill = function (_Toggle) {
           },
           onFocus: this.handleFocus,
           onBlur: this.handleBlur,
-          className: 'treactr-kill-screenreader-only',
+          className: 'treactr-fxtoggle-screenreader-only',
           type: 'checkbox' }))
       );
     }
   }]);
 
-  return Kill;
+  return FxToggle;
 }(Toggle);
 
-var FxToggle = function (_Toggle2) {
-  _inherits(FxToggle, _Toggle2);
+var FxToggle1 = function (_FxToggle) {
+  _inherits(FxToggle1, _FxToggle);
 
-  function FxToggle() {
-    _classCallCheck(this, FxToggle);
+  function FxToggle1() {
+    _classCallCheck(this, FxToggle1);
 
-    return _possibleConstructorReturn(this, (FxToggle.__proto__ || Object.getPrototypeOf(FxToggle)).apply(this, arguments));
+    return _possibleConstructorReturn(this, (FxToggle1.__proto__ || Object.getPrototypeOf(FxToggle1)).apply(this, arguments));
   }
 
-  _createClass(FxToggle, [{
+  return FxToggle1;
+}(FxToggle);
+
+FxToggle1.defaultProps = {
+  icons: {
+    checked: _react2.default.createElement(_on.ON1, null),
+    unchecked: _react2.default.createElement(_off.OFF1, null)
+  }
+};
+
+var FxToggle2 = function (_FxToggle2) {
+  _inherits(FxToggle2, _FxToggle2);
+
+  function FxToggle2() {
+    _classCallCheck(this, FxToggle2);
+
+    return _possibleConstructorReturn(this, (FxToggle2.__proto__ || Object.getPrototypeOf(FxToggle2)).apply(this, arguments));
+  }
+
+  return FxToggle2;
+}(FxToggle);
+
+FxToggle2.defaultProps = {
+  icons: {
+    checked: _react2.default.createElement(_on.ON2, null),
+    unchecked: _react2.default.createElement(_off.OFF2, null)
+  }
+};
+
+var Kill = function (_Toggle2) {
+  _inherits(Kill, _Toggle2);
+
+  function Kill() {
+    _classCallCheck(this, Kill);
+
+    return _possibleConstructorReturn(this, (Kill.__proto__ || Object.getPrototypeOf(Kill)).apply(this, arguments));
+  }
+
+  _createClass(Kill, [{
     key: 'render',
     value: function render() {
-      var _this6 = this;
+      var _this8 = this;
 
       var _props3 = this.props,
           className = _props3.className,
@@ -315,7 +357,7 @@ var FxToggle = function (_Toggle2) {
         ),
         _react2.default.createElement('input', _extends({}, inputProps, {
           ref: function ref(_ref3) {
-            _this6.input = _ref3;
+            _this8.input = _ref3;
           },
           onFocus: this.handleFocus,
           onBlur: this.handleBlur,
@@ -325,9 +367,10 @@ var FxToggle = function (_Toggle2) {
     }
   }]);
 
-  return FxToggle;
+  return Kill;
 }(Toggle);
 
 exports.Toggle = Toggle;
 exports.Kill = Kill;
-exports.FxToggle = FxToggle;
+exports.FxToggle1 = FxToggle1;
+exports.FxToggle2 = FxToggle2;

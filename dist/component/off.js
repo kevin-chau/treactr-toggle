@@ -3,6 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
+exports.OFF2 = exports.OFF1 = exports.OFF = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -45,17 +46,60 @@ var OFF = function (_React$Component) {
   return OFF;
 }(_react2.default.Component);
 
-exports.default = OFF;
+var OFF1 = function (_React$Component2) {
+  _inherits(OFF1, _React$Component2);
 
+  function OFF1() {
+    _classCallCheck(this, OFF1);
 
-var OFF1 = function OFF1() {
-  _react2.default.createElement(
-    'svg',
-    { width: '37', height: '21', viewBox: '0 0 37 21' },
-    _react2.default.createElement(
-      'text',
-      { x: '0', y: '45%', fontWeight: '500', fontSize: '11', fill: '#A9A9A9' },
-      '1'
-    )
-  );
-};
+    return _possibleConstructorReturn(this, (OFF1.__proto__ || Object.getPrototypeOf(OFF1)).apply(this, arguments));
+  }
+
+  _createClass(OFF1, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'svg',
+        { width: '21', height: '23', viewBox: '0 0 21 23' },
+        _react2.default.createElement(
+          'text',
+          { x: '63%', y: '40%', fontWeight: '500', fontSize: '11', fill: '#D6D6D6' },
+          '1'
+        )
+      );
+    }
+  }]);
+
+  return OFF1;
+}(_react2.default.Component);
+
+var OFF2 = function (_React$Component3) {
+  _inherits(OFF2, _React$Component3);
+
+  function OFF2() {
+    _classCallCheck(this, OFF2);
+
+    return _possibleConstructorReturn(this, (OFF2.__proto__ || Object.getPrototypeOf(OFF2)).apply(this, arguments));
+  }
+
+  _createClass(OFF2, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'svg',
+        { width: '21', height: '23', viewBox: '0 0 21 23' },
+        _react2.default.createElement(
+          'text',
+          { x: '63%', y: '40%', fontWeight: '500', fontSize: '11', fill: '#D6D6D6' },
+          '2'
+        )
+      );
+    }
+  }]);
+
+  return OFF2;
+}(_react2.default.Component);
+
+exports.OFF = OFF;
+exports.OFF1 = OFF1;
+exports.OFF2 = OFF2;
