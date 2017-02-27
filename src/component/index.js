@@ -1,7 +1,7 @@
 import React, { PureComponent, PropTypes } from 'react'
 import classNames from 'classnames'
-import { ON, ON1, ON2 } from './on'
-import { OFF, OFF1, OFF2 } from './off'
+import { ON, ON1, ON2, ON_MONITOR_CUE } from './on'
+import { OFF, OFF1, OFF2, OFF_MONITOR_CUE } from './off'
 import { pointerCoord } from './util'
 
 class Toggle extends PureComponent {
@@ -220,6 +220,50 @@ FxToggle2.defaultProps = {
   },
 }
 
+class ToggleMonitorCue extends Toggle {
+  render () {
+    const { className, icons: _icons, ...inputProps } = this.props
+    const classes = classNames('treactr-mc', {
+      'treactr-mc--checked': this.state.checked,
+      'treactr-mc--focus': this.state.hasFocus,
+      'treactr-mc--disabled': this.props.disabled,
+    }, className)
+
+    return (
+      <div className={classes}
+        onClick={this.handleClick}
+        onTouchStart={this.handleTouchStart}
+        onTouchMove={this.handleTouchMove}
+        onTouchEnd={this.handleTouchEnd}>
+        <div className='treactr-mc-track'>
+          <div className='treactr-mc-track-check'>
+            {this.getIcon('checked')}
+          </div>
+          <div className='treactr-mc-track-x'>
+            {this.getIcon('unchecked')}
+          </div>
+        </div>
+        <div className='treactr-mc-thumb' />
+
+        <input
+          {...inputProps}
+          ref={ref => { this.input = ref }}
+          onFocus={this.handleFocus}
+          onBlur={this.handleBlur}
+          className='treactr-mc-screenreader-only'
+          type='checkbox' />
+      </div>
+    )
+  }
+}
+
+ToggleMonitorCue.defaultProps = {
+  icons: {
+    checked: <ON_MONITOR_CUE />,
+    unchecked: <OFF_MONITOR_CUE />,
+  },
+}
+
 class Kill extends Toggle {
   render () {
     const { className, icons: _icons, ...inputProps } = this.props
@@ -252,4 +296,4 @@ class Kill extends Toggle {
   }
 }
 
-export { Toggle, Kill, FxToggle1, FxToggle2 }
+export { Toggle, Kill, FxToggle1, FxToggle2, ToggleMonitorCue }

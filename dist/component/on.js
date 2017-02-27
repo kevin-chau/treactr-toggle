@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ON2 = exports.ON1 = exports.ON = undefined;
+exports.ON_MONITOR_CUE = exports.ON2 = exports.ON1 = exports.ON = undefined;
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
@@ -100,6 +100,35 @@ var ON2 = function (_React$Component3) {
   return ON2;
 }(_react2.default.Component);
 
+var ON_MONITOR_CUE = function (_React$Component4) {
+  _inherits(ON_MONITOR_CUE, _React$Component4);
+
+  function ON_MONITOR_CUE() {
+    _classCallCheck(this, ON_MONITOR_CUE);
+
+    return _possibleConstructorReturn(this, (ON_MONITOR_CUE.__proto__ || Object.getPrototypeOf(ON_MONITOR_CUE)).apply(this, arguments));
+  }
+
+  _createClass(ON_MONITOR_CUE, [{
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'svg',
+        { width: '33', height: '24', viewBox: '0 0 33 24' },
+        _react2.default.createElement(
+          'g',
+          { transform: 'translate(-6,20.000000) scale(0.100000,-0.100000)',
+            fill: '#34230B', stroke: 'none' },
+          _react2.default.createElement('path', { d: 'M102 184 c-27 -18 -29 -66 -6 -112 20 -42 34 -40 34 3 0 27 -5 38 -21 43 -20 8 -20 8 -1 32 27 33 87 33 114 0 19 -24 19 -24 -1 -32 -16 -5 -21 -16 -21 -43 0 -43 14 -45 34 -3 38 75 10 128 -69 128 -22 0 -51 -7 -63 -16z' })
+        )
+      );
+    }
+  }]);
+
+  return ON_MONITOR_CUE;
+}(_react2.default.Component);
+
 exports.ON = ON;
 exports.ON1 = ON1;
 exports.ON2 = ON2;
+exports.ON_MONITOR_CUE = ON_MONITOR_CUE;

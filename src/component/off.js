@@ -30,4 +30,19 @@ class OFF2 extends React.Component {
   }
 }
 
-export { OFF, OFF1, OFF2 }
+class OFF_MONITOR_CUE extends React.Component {
+  render () {
+    return (
+      <svg width='33' height='24' viewBox='0 0 33 24'>
+        <g transform='translate(-6,20.000000) scale(0.100000,-0.100000)'
+          fill='#d8d8d8' stroke='none'>
+          <path d='M102 184 c-27 -18 -29 -66 -6 -112 20 -42 34 -40 34 3 0 27 -5 38
+        -21 43 -20 8 -20 8 -1 32 27 33 87 33 114 0 19 -24 19 -24 -1 -32 -16 -5 -21
+        -16 -21 -43 0 -43 14 -45 34 -3 38 75 10 128 -69 128 -22 0 -51 -7 -63 -16z' />
+        </g>
+      </svg>
+    )
+  }
+}
+
+export { OFF, OFF1, OFF2, OFF_MONITOR_CUE }

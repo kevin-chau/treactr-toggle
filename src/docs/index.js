@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
 
-import { Toggle, Kill, FxToggle1, FxToggle2 } from '../component'
+import { Toggle, Kill, FxToggle1, FxToggle2, ToggleMonitorCue } from '../component'
 // In your code this would be:
 // import Toggle from 'treactr-toggle'
 
@@ -387,15 +387,25 @@ class App extends Component {
 
         {/* FxToggle1 */}
 
-            <FxToggle1
-              defaultChecked={this.state.tofuIsReady}
-              onChange={this.handleTofuChange} />
+        <FxToggle1
+          defaultChecked={this.state.tofuIsReady}
+          onChange={this.handleTofuChange} />
 
         {/* FxToggle2 */}
 
-            <FxToggle2
+        <FxToggle2
+          defaultChecked={this.state.tofuIsReady}
+          onChange={this.handleTofuChange} />
+
+        {/* Monitor Cue */}
+        <div className='example'>
+          <label>
+            <ToggleMonitorCue
               defaultChecked={this.state.tofuIsReady}
               onChange={this.handleTofuChange} />
+            <span className='label-text'>Monitor Cue</span>
+          </label>
+        </div>
       </form>
     )
   }

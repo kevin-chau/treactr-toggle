@@ -3,7 +3,7 @@
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.FxToggle2 = exports.FxToggle1 = exports.Kill = exports.Toggle = undefined;
+exports.ToggleMonitorCue = exports.FxToggle2 = exports.FxToggle1 = exports.Kill = exports.Toggle = undefined;
 
 var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
 
@@ -317,8 +317,77 @@ FxToggle2.defaultProps = {
   }
 };
 
-var Kill = function (_Toggle2) {
-  _inherits(Kill, _Toggle2);
+var ToggleMonitorCue = function (_Toggle2) {
+  _inherits(ToggleMonitorCue, _Toggle2);
+
+  function ToggleMonitorCue() {
+    _classCallCheck(this, ToggleMonitorCue);
+
+    return _possibleConstructorReturn(this, (ToggleMonitorCue.__proto__ || Object.getPrototypeOf(ToggleMonitorCue)).apply(this, arguments));
+  }
+
+  _createClass(ToggleMonitorCue, [{
+    key: 'render',
+    value: function render() {
+      var _this8 = this;
+
+      var _props3 = this.props,
+          className = _props3.className,
+          _icons = _props3.icons,
+          inputProps = _objectWithoutProperties(_props3, ['className', 'icons']);
+
+      var classes = (0, _classnames2.default)('treactr-mc', {
+        'treactr-mc--checked': this.state.checked,
+        'treactr-mc--focus': this.state.hasFocus,
+        'treactr-mc--disabled': this.props.disabled
+      }, className);
+
+      return _react2.default.createElement(
+        'div',
+        { className: classes,
+          onClick: this.handleClick,
+          onTouchStart: this.handleTouchStart,
+          onTouchMove: this.handleTouchMove,
+          onTouchEnd: this.handleTouchEnd },
+        _react2.default.createElement(
+          'div',
+          { className: 'treactr-mc-track' },
+          _react2.default.createElement(
+            'div',
+            { className: 'treactr-mc-track-check' },
+            this.getIcon('checked')
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'treactr-mc-track-x' },
+            this.getIcon('unchecked')
+          )
+        ),
+        _react2.default.createElement('div', { className: 'treactr-mc-thumb' }),
+        _react2.default.createElement('input', _extends({}, inputProps, {
+          ref: function ref(_ref3) {
+            _this8.input = _ref3;
+          },
+          onFocus: this.handleFocus,
+          onBlur: this.handleBlur,
+          className: 'treactr-mc-screenreader-only',
+          type: 'checkbox' }))
+      );
+    }
+  }]);
+
+  return ToggleMonitorCue;
+}(Toggle);
+
+ToggleMonitorCue.defaultProps = {
+  icons: {
+    checked: _react2.default.createElement(_on.ON_MONITOR_CUE, null),
+    unchecked: _react2.default.createElement(_off.OFF_MONITOR_CUE, null)
+  }
+};
+
+var Kill = function (_Toggle3) {
+  _inherits(Kill, _Toggle3);
 
   function Kill() {
     _classCallCheck(this, Kill);
@@ -329,12 +398,12 @@ var Kill = function (_Toggle2) {
   _createClass(Kill, [{
     key: 'render',
     value: function render() {
-      var _this8 = this;
+      var _this10 = this;
 
-      var _props3 = this.props,
-          className = _props3.className,
-          _icons = _props3.icons,
-          inputProps = _objectWithoutProperties(_props3, ['className', 'icons']);
+      var _props4 = this.props,
+          className = _props4.className,
+          _icons = _props4.icons,
+          inputProps = _objectWithoutProperties(_props4, ['className', 'icons']);
 
       var classes = (0, _classnames2.default)('treactr-kill', {
         'treactr-kill--checked': this.state.checked,
@@ -356,8 +425,8 @@ var Kill = function (_Toggle2) {
           _react2.default.createElement('div', { className: 'treactr-kill-track-x' })
         ),
         _react2.default.createElement('input', _extends({}, inputProps, {
-          ref: function ref(_ref3) {
-            _this8.input = _ref3;
+          ref: function ref(_ref4) {
+            _this10.input = _ref4;
           },
           onFocus: this.handleFocus,
           onBlur: this.handleBlur,
@@ -374,3 +443,4 @@ exports.Toggle = Toggle;
 exports.Kill = Kill;
 exports.FxToggle1 = FxToggle1;
 exports.FxToggle2 = FxToggle2;
+exports.ToggleMonitorCue = ToggleMonitorCue;
