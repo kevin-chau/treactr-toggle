@@ -19,14 +19,14 @@
     "react",
     "react-component"
   ],
-  "author": "Aaron Shafovaloff <kevinchau321@gmail.com>",
-  "homepage": "https://github.com/kevinchau321/treactr-toggle",
+  "author": "Kevin Chau",
+  "homepage": "https://github.com/kevin-chau/treactr-toggle",
   "repository": {
     "type": "git",
-    "url": "git@github.com:kevinchau321/treactr-toggle.git"
+    "url": "git@github.com:kevin-chau/treactr-toggle.git"
   },
   "bugs": {
-    "url": "https://github.com/kevinchau321/treactr-toggle/issues"
+    "url": "https://github.com/kevin-chau/treactr-toggle/issues"
   },
   "license": "MIT",
   "devDependencies": {
